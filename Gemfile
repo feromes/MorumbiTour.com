@@ -33,3 +33,21 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+group :development do
+  gem "rails-erd"
+end
+
+gem "rspec-rails", :group => [:test, :development]
+group :test do
+  # Pretty printed test output 
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem "guard-rspec"
+  gem "shoulda-matchers"       
+  gem "ZenTest"
+  gem "autotest-rails"  
+  gem "autotest-growl"
+  gem "autotest-fsevent"
+  # gem "redgreen"
+end
