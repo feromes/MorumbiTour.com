@@ -22,3 +22,13 @@ Cada _reserva_ deve ter as seguintes informações:
 h3. Usuários válidos
 
 A princípio somente usuários válidos poderão fazer, e consultar reservas
+
+h2. TODO's
+
+* implementar a listagem de cada saída, como /reservas/03/01/2012-as-11-e-30
+* renderizar .ics ou .ical
+* confirmação da reserva por email com .ics ou .ical atachado
+* implementar autenticação
+* restringir reservas apenas para usuários autenticados  
+* traduzir os padrões em inglês do scaffold 
+* colocar um layout mínimo
