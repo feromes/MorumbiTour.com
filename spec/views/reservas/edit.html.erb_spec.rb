@@ -1,14 +1,15 @@
+# encoding: UTF-8
 require 'spec_helper'
 
 describe "reservas/edit.html.erb" do
   before(:each) do
     @reserva = assign(:reserva, stub_model(Reserva,
-      :nome => "MyString",
-      :email => "MyString",
-      :telefone => "MyString",
-      :quantidade_de_pessoas => 1,
+      :nome => "João da Silva",
+      :email => "joao@exemple.com",
+      :telefone => "11 99999999",
+      :quantidade_de_pessoas => 4,
       :horario_desejado => "MyString",
-      :observacoes_e_pedidos_especiais => "MyString"
+      :observacoes_e_pedidos_especiais => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     ))
   end
 
