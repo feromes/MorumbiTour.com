@@ -11,8 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
 ActiveRecord::Schema.define(:version => 20120103143215) do
+
+  create_table "reserva", :force => true do |t|
+    t.string   "nome"
+    t.string   "email"
+    t.string   "telefone"
+    t.integer  "quantidade_de_pessoas"
+    t.date     "dia_desejado"
+    t.string   "horario_desejado"
+    t.string   "observacoes_e_pedidos_especiais"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
 
   create_table "reservas", :force => true do |t|
     t.string   "nome"
