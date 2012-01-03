@@ -21,6 +21,7 @@ describe "reservas/index.html.erb" do
         :observacoes_e_pedidos_especiais => "Observacoes E Pedidos Especiais"
       )
     ])
+    assign(:reservas_por_saida, {[Date.today, "11:30"] => 15, [Date.today, "13:30"] => 6 })
   end
 
   it "renders a list of reservas" do
@@ -47,5 +48,11 @@ describe "reservas/index.html.erb" do
   it "renderizar proximas datas de Tours a serem realizados" do
      render
      rendered.should =~ /Próximas Saídas/
-  end
+  end  
+  
+  it "renderizar as próximas saídas separadas por data e horário" do
+     render
+     rendered.should =~ /(15)/
+     rendered.should =~ /(6)/
+  end 
 end
