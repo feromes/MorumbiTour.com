@@ -25,7 +25,11 @@ describe ReservasController do
   # Reserva. As you add validations to Reserva, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {:nome => 'João Paulo da Silva'}
+    {:nome => 'João Paulo da Silva',
+     :email => 'joao@exemplo.com',
+     :quantidade_de_pessoas => 5,
+     :dia_desejado => Date.today,
+     :horario_desejado => '11:30'}
   end
 
   describe "GET index" do
