@@ -1,4 +1,6 @@
 MorumbitourCom::Application.routes.draw do
+  resources :reservas
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
