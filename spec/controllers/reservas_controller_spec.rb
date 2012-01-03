@@ -99,7 +99,11 @@ describe ReservasController do
     describe "with valid params" do
       it "updates the requested reserva" do
         reserva = Reserva.create! valid_attributes
+<<<<<<< HEAD
         # Assuming there are no other reservas in the database, this
+=======
+        # Assuming there are no other reserva in the database, this
+>>>>>>> 85c8955d5bdec5bcd19158f1c0424f02e17b7932
         # specifies that the Reserva created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
@@ -147,7 +151,11 @@ describe ReservasController do
       }.to change(Reserva, :count).by(-1)
     end
 
+<<<<<<< HEAD
     it "redirects to the reservas list" do
+=======
+    it "redirects to the reserva list" do
+>>>>>>> 85c8955d5bdec5bcd19158f1c0424f02e17b7932
       reserva = Reserva.create! valid_attributes
       delete :destroy, :id => reserva.id
       response.should redirect_to(reservas_url)

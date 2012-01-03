@@ -11,6 +11,9 @@ end
 
 module MorumbitourCom
   class Application < Rails::Application
+    # Desabilitando a pluralização das tabelas
+    config.active_record.pluralize_table_names = false 
+    
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
