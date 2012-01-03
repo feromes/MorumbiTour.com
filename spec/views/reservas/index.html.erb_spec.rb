@@ -52,7 +52,7 @@ describe "reservas/index.html.erb" do
   
   it "renderizar as próximas saídas separadas por data e horário" do
      render
-     rendered.should =~ /(15)/
-     rendered.should =~ /(6)/
+     rendered.should =~ /[0-3][0-9]\/[0-1][0-9]\/[0-9][0-9]\s11\:30\s\(15\)/
+     rendered.should =~ /[0-3][0-9]\/[0-1][0-9]\/[0-9][0-9]\s13\:30\s\(6\)/ 
   end 
 end
