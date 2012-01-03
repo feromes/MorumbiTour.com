@@ -6,9 +6,13 @@
 
 <h2>Próximas Saídas</h2>
 
+<ul>
+<% @reservas_por_saida.each do |data_e_horario, quantidade| %>
+  <li><%= data_e_horario %> (<%= quantidade %>)</li>
+<% end %>
+</ul>
 
-
-<table>
+<table>   
   <tr>
     <th>Nome</th>
     <th>Email</th>
