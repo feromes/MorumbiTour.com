@@ -1,0 +1,24 @@
+h1. MorumbiTour.com
+
+O MorumbiTour é um tour Guiado pelo Estádio do Morumbi.
+Nele é possível conhecer todo o estádio, as histórias, curiosidades do maior estádio particular do Brasil.
+
+h2. Sistema de reservas
+
+As reservas são feitas por telefono ou email, e a primeira funcionalidade do sistema é armazenar essa informação para ser acessível a todos que fazem reservas.
+
+h3. Informações básicas
+
+Cada _reserva_ deve ter as seguintes informações:
+
+* nome _(requerido)_
+* email
+* telefone
+* quantidade_de_pessoas _(requerido)_
+* dia_desejado _(requerido)_
+* horario_desejado _(requerido)_
+* observacoes_e_pedidos_especiais
+
+h3. Usuários válidos
+
+A princípio somente usuários válidos poderão fazer, e consultar reservas
