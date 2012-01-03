@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'spec_helper'
 
 describe "reservas/index.html.erb" do
@@ -36,5 +37,15 @@ describe "reservas/index.html.erb" do
     assert_select "tr>td", :text => "Horario Desejado".to_s, :count => 2
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "tr>td", :text => "Observacoes E Pedidos Especiais".to_s, :count => 2
+  end 
+  
+  it "renderizar uma opção para fazer nova reserva" do
+     render
+     rendered.should =~ /Nova Reserva/ 
+  end
+  
+  it "renderizar proximas datas de Tours a serem realizados" do
+     render
+     rendered.should =~ /Proximas saidas/
   end
 end

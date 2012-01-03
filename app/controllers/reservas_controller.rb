@@ -3,7 +3,8 @@ class ReservasController < ApplicationController
   # GET /reservas.json
   def index
     @reservas = Reserva.all
-
+    @reservas_por_saida = Reserva.proximas_saidas
+                            
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @reservas }

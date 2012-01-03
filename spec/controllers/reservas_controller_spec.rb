@@ -38,6 +38,11 @@ describe ReservasController do
       get :index
       assigns(:reservas).should eq([reserva])
     end
+    it "deve conter reservas separadas por dias e horarios em @reservas_por_saidas" do
+      reservas_por_saida = {Date.today => {"11:30" => [Reserva.create!(valid_attributes)] * 5}}
+      get :index
+      assigns(:reservas_por_saida).should eq(reservas_por_saida)
+    end
   end
 
   describe "GET show" do
