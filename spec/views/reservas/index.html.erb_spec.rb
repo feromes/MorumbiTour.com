@@ -46,6 +46,6 @@ describe "reservas/index.html.erb" do
   
   it "renderizar proximas datas de Tours a serem realizados" do
      render
-     rendered.should =~ /Proximas saidas/
+     rendered.should =~ /Próximas Saídas/
   end
 end
