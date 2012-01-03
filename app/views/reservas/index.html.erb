@@ -8,7 +8,7 @@
 
 <ul>
 <% @reservas_por_saida.each do |data_e_horario, quantidade| %>
-  <li><%= data_e_horario %> (<%= quantidade %>)</li>
+  <li><%= DataEHorario.new(data_e_horario[0], data_e_horario[1]).to_s %> (<%= quantidade %>)</li>
 <% end %>
 </ul>
 
