@@ -8,7 +8,10 @@
 
 <ul>
 <% @reservas_por_saida.each do |data_e_horario, quantidade| %>
-  <li><%= DataEHorario.new(data_e_horario[0], data_e_horario[1]).to_s %> (<%= quantidade %>) <b><%= link_to "+", new_reserva_path(dia_desejado: data_e_horario[0], horario_desejado: data_e_horario[1] ) %></b></li>
+  <li>
+	<%= link_to "#{DataEHorario.new(data_e_horario[0], data_e_horario[1]).to_s} (#{quantidade})", reservas_path(dia_desejado: data_e_horario[0], horario_desejado: data_e_horario[1])%> 
+    <b><%= link_to "+", new_reserva_path(dia_desejado: data_e_horario[0], horario_desejado: data_e_horario[1] ) %></b>
+  </li>
 <% end %>
 </ul>
 
