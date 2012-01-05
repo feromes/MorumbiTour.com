@@ -9,4 +9,10 @@ describe DataEHorario do
       data_e_horario.to_s.should == [Date.today.strftime("%d/%m/%y"), "11:30"].join(" ")
     end
   end
+  
+  it "horarios_disponiveis deve retornar uma Array de horários" do
+    DataEHorario.horarios_disponiveis.should be_kind_of(Array)
+    DataEHorario.horarios_disponiveis.should_not be_empty
+    DataEHorario.horarios_disponiveis.each {|h| h.should match(/[0-2][0-9]:[0-5][0-9]/)}
+  end
 end

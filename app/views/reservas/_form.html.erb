@@ -28,12 +28,8 @@
     <%= f.number_field :quantidade_de_pessoas %>
   </div>
   <div class="field">
-    <%= f.label :dia_desejado %><br />
-    <%= f.date_select :dia_desejado %>
-  </div>
-  <div class="field">
-    <%= f.label :horario_desejado %><br />
-    <%= f.text_field :horario_desejado %>
+    <%= f.label "Dia e horário desejado" %><br />
+    <%= f.date_select :dia_desejado %> as <%= f.select :horario_desejado, DataEHorario.horarios_disponiveis %>
   </div>
   <div class="field">
     <%= f.label :observacoes_e_pedidos_especiais %><br />
