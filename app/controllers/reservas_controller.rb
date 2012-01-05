@@ -2,8 +2,8 @@ class ReservasController < ApplicationController
   # GET /reservas
   # GET /reservas.json
   def index
-    @reservas = Reserva.all
     @reservas_por_saida = Reserva.proximas_saidas
+    @reservas = Reserva.find(:all, :conditions => {dia_desejado: params[:dia_desejado], horario_desejado: params[:horario_desejado]}) unless params[:dia_desejado].nil?
                             
     respond_to do |format|
       format.html # index.html.erb
@@ -25,7 +25,8 @@ class ReservasController < ApplicationController
   # GET /reservas/new
   # GET /reservas/new.json
   def new
-    @reserva = Reserva.new
+    @reserva = Reserva.new(dia_desejado: params[:dia_desejado],
+                           horario_desejado: params[:horario_desejado])
 
     respond_to do |format|
       format.html # new.html.erb

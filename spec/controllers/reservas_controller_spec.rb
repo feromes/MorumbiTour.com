@@ -31,17 +31,31 @@ describe ReservasController do
      :dia_desejado => Date.today,
      :horario_desejado => '11:30'}
   end
+  
+  def atributos_de_dia_e_horario
+    {:dia_desejado => Date.today,
+    :horario_desejado => '11:30'} 
+  end
 
   describe "GET index" do
     it "assigns all reservas as @reservas" do
       reserva = Reserva.create! valid_attributes
       get :index
-      assigns(:reservas).should be_kind_of(Array)
+      assigns(:reservas).should_not be_kind_of(Array)
     end
     it "deve conter reservas separadas por dias e horarios em @reservas_por_saidas" do
       # reservas_por_saida = {[Date.today, "11:30"] => }}
       get :index
       assigns(:reservas_por_saida).should be_kind_of(Hash)
+    end
+    context "caso os parametros dia_desejado for hj e horario_desejado for 11:30" do
+      it "deve listar todas as reservas desse dia uma a uma" do 
+        reserva = Reserva.create valid_attributes
+        reserva_postergada = Reserva.new(valid_attributes).dia_desejado = Date.today + 1
+        get :index, :dia_desejado => Date.today.to_s, :horario_desejado => "11:30"
+        assigns(:reservas).should include(reserva)
+        assigns(:reservas).should_not include(reserva_postergada)
+      end 
     end
   end
 
@@ -57,6 +71,13 @@ describe ReservasController do
     it "assigns a new reserva as @reserva" do
       get :new
       assigns(:reserva).should be_a_new(Reserva)
+    end
+    context "caso os parametros dia_desejado e horario_desejado estiverem presentes" do
+      it "deve atribuir os valores aos dias e horarios desejados" do
+        get :new, :dia_desejado => Date.today.to_s, :horario_desejado => "11:30"
+        assigns(:reserva).dia_desejado.should eq((Reserva.new atributos_de_dia_e_horario).dia_desejado)
+        assigns(:reserva).horario_desejado.should eq((Reserva.new atributos_de_dia_e_horario).horario_desejado)
+      end
     end
   end
 

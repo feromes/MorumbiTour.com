@@ -1,0 +1,26 @@
+<h2>Reservas do dia <%= @reservas.first.dia_desejado.strftime('%d/%m/%y') %> <%= @reservas.first.horario_desejado %></h2>
+
+<table>
+	<tt>
+		<td>Nome</td>
+		<td>Quant.</td>
+		<td>Obs.</td>
+	</tt>
+	<% total_de_pessoas = 0 %>
+<% @reservas.each do |reserva| %>
+	<tr>
+		<td><%= reserva.nome %></td>
+		<td><%= reserva.quantidade_de_pessoas%></td> 
+		<% total_de_pessoas += reserva.quantidade_de_pessoas %>
+		<td><%= reserva.observacoes_e_pedidos_especiais %></td>
+	</tr>
+<% end %>
+	<tr class='last'>
+		<td id='label_total_passageiros'>Total de passageiros</td>
+		<td id='total_passageiros'><%= total_de_pessoas %></td>
+		<td></td>
+	</tr>
+</table>
+
+
+
