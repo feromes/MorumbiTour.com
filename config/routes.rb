@@ -1,4 +1,6 @@
 MorumbitourCom::Application.routes.draw do
+  devise_for :users
+
   resources :reservas
 
   # The priority is based upon order of creation:
