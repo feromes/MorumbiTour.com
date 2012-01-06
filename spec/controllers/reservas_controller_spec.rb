@@ -36,17 +36,33 @@ describe ReservasController do
     {:dia_desejado => Date.today,
     :horario_desejado => '11:30'} 
   end
+  
+  login_user
 
   describe "GET index" do
-    it "assigns all reservas as @reservas" do
-      reserva = Reserva.create! valid_attributes
-      get :index
-      assigns(:reservas).should_not be_kind_of(Array)
+    context "Caso usuário esteja autenticado" do
+      context "caso usuário seja do staff" do  
+        it "assigns all reservas as @reservas" do
+          reserva = Reserva.create! valid_attributes
+          get :index
+          assigns(:reservas).should_not be_kind_of(Array)
+        end
+        it "deve conter reservas separadas por dias e horarios em @reservas_por_saidas" do
+          # reservas_por_saida = {[Date.today, "11:30"] => }}
+          get :index
+          assigns(:reservas_por_saida).should be_kind_of(Hash)
+        end
+      end
+      context "caso usuário não seja do staff" do
+        it "deve ser redirecionado para uma mensagem de não autorizado" do
+          
+        end
+      end    
     end
-    it "deve conter reservas separadas por dias e horarios em @reservas_por_saidas" do
-      # reservas_por_saida = {[Date.today, "11:30"] => }}
-      get :index
-      assigns(:reservas_por_saida).should be_kind_of(Hash)
+    context "dado um usuário não autenticado" do
+      it "deve redirecionar para criar um novo usuário" do
+        pending
+      end
     end
     context "caso os parametros dia_desejado for hj e horario_desejado for 11:30" do
       it "deve listar todas as reservas desse dia uma a uma" do 

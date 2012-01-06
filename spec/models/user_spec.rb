@@ -1,5 +1,8 @@
+# encoding: UTF-8
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "Ao criar um usuário novo deve ser criado como não sendo Staff" do
+    pending
+  end
 end
