@@ -25,7 +25,6 @@ A princípio somente usuários válidos poderão fazer, e consultar reservas
 
 h2. TODO's
 
-* restringir reservas apenas para usuários autenticados  
 * colocar um layout mínimo 
 * traduzir os padrões em inglês do scaffold 
 * renderizar .ics ou .ical
