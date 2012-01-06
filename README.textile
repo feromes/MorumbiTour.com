@@ -28,4 +28,5 @@ h2. TODO's
 * colocar um layout mínimo 
 * traduzir os padrões em inglês do scaffold 
 * renderizar .ics ou .ical
-* confirmação da reserva por email com .ics ou .ical atachado 
+* confirmação da reserva por email com .ics ou .ical atachado
+* sistema para o proprio usuário fazer sua reserva

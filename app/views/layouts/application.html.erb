@@ -2,15 +2,37 @@
 <html>
 <head>
   <title>MorumbitourCom</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-    
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
-	<%= yield %>
-
+<body style="padding-top: 60px">
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="container-fluid">
+        <h3><%= link_to "MorumbitourCom", "/" %></h3>
+        <ul class="nav">
+          <li><%= link_to "Link1", "/path1"  %></li>
+          <li><%= link_to "Link2", "/path2"  %></li>
+          <li><%= link_to "Link3", "/path3"  %></li>
+        
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="sidebar">
+      <div class="well">
+        <h5>Sidebar</h5>
+        <ul>
+          <li><%= link_to "Link1", "/path1"  %></li>
+          <li><%= link_to "Link2", "/path2"  %></li>
+          <li><%= link_to "Link3", "/path3"  %></li>
+         <li class="<%= controller.controller_path == 'reservas' ? 'active' : '' %>"><a href="<%= reservas_path %>">Reservas</a></li></ul>
+      </div>
+    </div>
+    <div class="content">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
