@@ -9,7 +9,7 @@
 	<% total_de_pessoas = 0 %>
 <% @reservas.each do |reserva| %>
 	<tr>
-		<td><%= reserva.nome %></td>
+		<td><%= link_to reserva.nome, reserva %></td>
 		<td><%= reserva.quantidade_de_pessoas%></td> 
 		<% total_de_pessoas += reserva.quantidade_de_pessoas %>
 		<td><%= reserva.observacoes_e_pedidos_especiais %></td>

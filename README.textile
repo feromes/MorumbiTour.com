@@ -27,7 +27,7 @@ h2. TODO's
 
 * implementar autenticação
 * restringir reservas apenas para usuários autenticados  
+* colocar um layout mínimo 
 * traduzir os padrões em inglês do scaffold 
-* colocar um layout mínimo
 * renderizar .ics ou .ical
 * confirmação da reserva por email com .ics ou .ical atachado 
