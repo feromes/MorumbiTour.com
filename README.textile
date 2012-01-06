@@ -25,7 +25,7 @@ A princípio somente usuários válidos poderão fazer, e consultar reservas
 
 h2. TODO's
 
-* colocar um layout mínimo 
+* opção para logout no layout
 * traduzir os padrões em inglês do scaffold 
 * renderizar .ics ou .ical
 * confirmação da reserva por email com .ics ou .ical atachado

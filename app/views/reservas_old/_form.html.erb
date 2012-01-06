@@ -1,0 +1,41 @@
+<%= form_for(@reserva) do |f| %>
+  <% if @reserva.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reserva.errors.count, "error") %> prohibited this reserva from being saved:</h2>
+
+      <ul>
+      <% @reserva.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :telefone %><br />
+    <%= f.text_field :telefone %>
+  </div>
+  <div class="field">
+    <%= f.label :quantidade_de_pessoas %><br />
+    <%= f.number_field :quantidade_de_pessoas %>
+  </div>
+  <div class="field">
+    <%= f.label "Dia e horário desejado" %><br />
+    <%= f.date_select :dia_desejado, :order => [:day, :month, :year] %> as <%= f.select :horario_desejado, DataEHorario.horarios_disponiveis %>
+  </div>
+  <div class="field">
+    <%= f.label :observacoes_e_pedidos_especiais %><br />
+    <%= f.text_field :observacoes_e_pedidos_especiais %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,40 +1,22 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Nome:</b>
-  <%= @reserva.nome %>
-</p>
+  <label class="label"><%= t("activerecord.attributes.reserva.nome", :default => t("activerecord.labels.nome", :default => "Nome")) %>:</label>
+  <p><%= @reserva.nome %></p>
 
-<p>
-  <b>Email:</b>
-  <%= @reserva.email %>
-</p>
+  <label class="label"><%= t("activerecord.attributes.reserva.email", :default => t("activerecord.labels.email", :default => "Email")) %>:</label>
+  <p><%= @reserva.email %></p>
 
-<p>
-  <b>Telefone:</b>
-  <%= @reserva.telefone %>
-</p>
+  <label class="label"><%= t("activerecord.attributes.reserva.telefone", :default => t("activerecord.labels.telefone", :default => "Telefone")) %>:</label>
+  <p><%= @reserva.telefone %></p>
 
-<p>
-  <b>Quantidade de pessoas:</b>
-  <%= @reserva.quantidade_de_pessoas %>
-</p>
+  <label class="label"><%= t("activerecord.attributes.reserva.quantidade_de_pessoas", :default => t("activerecord.labels.quantidade_de_pessoas", :default => "Quantidade de pessoas")) %>:</label>
+  <p><%= @reserva.quantidade_de_pessoas %></p>
 
-<p>
-  <b>Dia desejado:</b>
-  <%= @reserva.dia_desejado %>
-</p>
+  <label class="label"><%= t("activerecord.attributes.reserva.dia_desejado", :default => t("activerecord.labels.dia_desejado", :default => "Dia desejado")) %>:</label>
+  <p><%= @reserva.dia_desejado %></p>
 
-<p>
-  <b>Horario desejado:</b>
-  <%= @reserva.horario_desejado %>
-</p>
+  <label class="label"><%= t("activerecord.attributes.reserva.horario_desejado", :default => t("activerecord.labels.horario_desejado", :default => "Horario desejado")) %>:</label>
+  <p><%= @reserva.horario_desejado %></p>
 
-<p>
-  <b>Observacoes e pedidos especiais:</b>
-  <%= @reserva.observacoes_e_pedidos_especiais %>
-</p>
-
-
-<%= link_to 'Edit', edit_reserva_path(@reserva) %> |
-<%= link_to 'Back', reservas_path %>
+  <label class="label"><%= t("activerecord.attributes.reserva.observacoes_e_pedidos_especiais", :default => t("activerecord.labels.observacoes_e_pedidos_especiais", :default => "Observacoes e pedidos especiais")) %>:</label>
+  <p><%= @reserva.observacoes_e_pedidos_especiais %></p>
+<%= link_to "Back", reservas_path  %>

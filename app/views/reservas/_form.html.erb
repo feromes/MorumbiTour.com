@@ -1,41 +1,25 @@
-<%= form_for(@reserva) do |f| %>
-  <% if @reserva.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@reserva.errors.count, "error") %> prohibited this reserva from being saved:</h2>
 
-      <ul>
-      <% @reserva.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <%= f.label :nome, t("activerecord.attributes.reserva.nome", :default => "Nome"), :class => :label %>
+    <%= f.text_field :nome, :class => 'text_field' %>
 
-  <div class="field">
-    <%= f.label :nome %><br />
-    <%= f.text_field :nome %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :telefone %><br />
-    <%= f.text_field :telefone %>
-  </div>
-  <div class="field">
-    <%= f.label :quantidade_de_pessoas %><br />
-    <%= f.number_field :quantidade_de_pessoas %>
-  </div>
-  <div class="field">
-    <%= f.label "Dia e horário desejado" %><br />
-    <%= f.date_select :dia_desejado, :order => [:day, :month, :year] %> as <%= f.select :horario_desejado, DataEHorario.horarios_disponiveis %>
-  </div>
-  <div class="field">
-    <%= f.label :observacoes_e_pedidos_especiais %><br />
-    <%= f.text_field :observacoes_e_pedidos_especiais %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+    <%= f.label :email, t("activerecord.attributes.reserva.email", :default => "Email"), :class => :label %>
+    <%= f.text_field :email, :class => 'text_field' %>
+
+    <%= f.label :telefone, t("activerecord.attributes.reserva.telefone", :default => "Telefone"), :class => :label %>
+    <%= f.text_field :telefone, :class => 'text_field' %>
+
+    <%= f.label :quantidade_de_pessoas, t("activerecord.attributes.reserva.quantidade_de_pessoas", :default => "Quantidade de pessoas"), :class => :label %>
+    <%= f.number_field :quantidade_de_pessoas, :class => 'number_field' %>
+
+    <%= f.label :dia_desejado, t("activerecord.attributes.reserva.dia_desejado", :default => "Dia desejado"), :class => :label %>
+    <%= f.date_select :dia_desejado, :order => [:day, :month, :year], :class => 'date_select' %>
+
+    <%= f.label :horario_desejado, t("activerecord.attributes.reserva.horario_desejado", :default => "Horario desejado"), :class => :label %>
+    <%= f.select :horario_desejado, DataEHorario.horarios_disponiveis, :class => 'date_select' %>
+
+    <%= f.label :observacoes_e_pedidos_especiais, t("activerecord.attributes.reserva.observacoes_e_pedidos_especiais", :default => "Observacoes e pedidos especiais"), :class => :label %>
+    <%= f.text_field :observacoes_e_pedidos_especiais, :class => 'text_field' %>
+<div class="actions">
+  <button class="btn primary" type="submit">Save</button> or
+	<%= link_to "Cancel", reservas_path %>
+</div>

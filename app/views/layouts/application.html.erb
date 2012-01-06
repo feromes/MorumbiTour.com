@@ -10,25 +10,39 @@
   <div class="topbar">
     <div class="topbar-inner">
       <div class="container-fluid">
-        <h3><%= link_to "MorumbitourCom", "/" %></h3>
+        <h3><%= link_to "MorumbiTour", "/" %></h3>
         <ul class="nav">
-          <li><%= link_to "Link1", "/path1"  %></li>
-          <li><%= link_to "Link2", "/path2"  %></li>
-          <li><%= link_to "Link3", "/path3"  %></li>
-        
+          <li><%= link_to "Reservas", reservas_path  %></li>
+		</ul>
+		<ul class="nav secondary-nav">
+			<li><%= link_to "Olá, #{current_user.email}", edit_user_password_path  %></li>
+			<li><%= link_to "logout", destroy_user_session_path  %></li>
+		</ul>
       </div>
     </div>
   </div>
   <div class="container-fluid">
     <div class="sidebar">
       <div class="well">
-        <h5>Sidebar</h5>
+        <h5>Nova Reserva</h5>
         <ul>
-          <li><%= link_to "Link1", "/path1"  %></li>
-          <li><%= link_to "Link2", "/path2"  %></li>
-          <li><%= link_to "Link3", "/path3"  %></li>
-         <li class="<%= controller.controller_path == 'reservas' ? 'active' : '' %>"><a href="<%= reservas_path %>">Reservas</a></li></ul>
+          <li><%= link_to "Nova reserva, clique aqui!", new_reserva_path  %></li>
+		</ul>
+      </div>    
+
+	  <% unless @reservas_por_saida.nil? %>
+      <div class="well">
+        <h5>Próximas saídas</h5>
+		<ul>
+		<% @reservas_por_saida.each do |data_e_horario, quantidade| %>
+		  <li>
+			<%= link_to "#{DataEHorario.new(data_e_horario[0], data_e_horario[1]).to_s} (#{quantidade})", reservas_path(dia_desejado: data_e_horario[0], horario_desejado: data_e_horario[1])%> 
+		    <b><%= link_to "+", new_reserva_path(dia_desejado: data_e_horario[0], horario_desejado: data_e_horario[1] ) %></b>
+		  </li>
+		<% end %>
+		</ul>
       </div>
+	  <% end %>
     </div>
     <div class="content">
       <%= yield %>
