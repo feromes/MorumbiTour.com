@@ -15,8 +15,8 @@
           <li><%= link_to "Reservas", reservas_path  %></li>
 		</ul>
 		<ul class="nav secondary-nav">
-			<li><%= link_to "Olá, #{current_user.email}", edit_user_password_path  %></li>
-			<li><%= link_to "logout", destroy_user_session_path  %></li>
+			<li><% if current_user %><%= link_to "Olá, #{current_user.email}", edit_user_password_path  %><% end %></li>
+			<li><%= link_to "logout", destroy_user_session_path, :method => :delete  %></li>
 		</ul>
       </div>
     </div>
